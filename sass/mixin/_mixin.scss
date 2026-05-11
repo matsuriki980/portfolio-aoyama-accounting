@@ -37,3 +37,21 @@ $font-weight: (
   font-size: #{$size}rem;
   line-height: $line-height / $size;
 }
+
+// ==================================================================
+// mask-img
+// ==================================================================
+
+@mixin mask-img {
+  mask: no-repeat center / contain;
+}
+
+// ==================================================================
+// background-img
+// ==================================================================
+
+@mixin background-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

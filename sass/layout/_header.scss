@@ -5,3 +5,301 @@
  layout > header
 ------------------------------
  */
+
+.content1 {
+  width: 100%;
+  height: 100vh;
+  background-color: aquamarine;
+}
+.content2 {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.l-header {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-header);
+  height: 76rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-black); // currentColorで一括変更
+  transition: background-color var(--duration-base);
+
+  @include g.mq() {
+    height: 92rem;
+  }
+
+  // トリガー要素を超えたら背景表示
+  &.is-active {
+    background-color: var(--color-white);
+  }
+}
+
+.l-header__inner {
+  width: 100%;
+  padding-inline: 18rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include g.mq() {
+    padding-inline: 30rem;
+  }
+}
+
+.l-header__logo {
+  width: 125rem;
+  height: 16rem;
+
+  @include g.mq() {
+    width: 165.98rem;
+    height: 22.01rem;
+  }
+}
+
+.l-header__logo-link {
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  transition:
+    color var(--duration-base),
+    opacity var(--duration-base);
+}
+
+.l-header__logo-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: currentColor;
+  @include m.mask-img;
+  mask-image: url(../img/common/logo.svg);
+}
+
+.l-header__content {
+  display: flex;
+  align-items: center;
+  gap: 36rem;
+}
+
+.l-header__nav {
+  display: none;
+
+  @include g.mq() {
+    display: block;
+    transition:
+      opacity var(--duration-base),
+      visibility var(--duration-base);
+  }
+}
+
+.l-header__nav-list {
+  @include g.mq() {
+    display: flex;
+    align-items: center;
+    gap: 36rem;
+  }
+}
+
+.l-header__nav-link {
+  margin-top: 4rem; // utility-hoverのpaddingを相殺
+  color: currentColor;
+
+  @include g.mq() {
+    @include m.font-size($size: 14, $line-height: 14);
+  }
+}
+
+.l-header__btns {
+  display: flex;
+  gap: 7rem;
+  align-items: center;
+
+  @include g.mq() {
+    gap: 12rem;
+  }
+}
+
+.l-header__btn {
+  width: 40rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+
+  @include g.mq() {
+    width: 58rem;
+    transition:
+      border var(--duration-base),
+      background-color var(--duration-base),
+      opacity var(--duration-base),
+      visibility var(--duration-base);
+  }
+}
+
+.l-header__contact-btn {
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+
+  @media (any-hover: hover) {
+    @include g.mq() {
+      &:hover {
+        background-color: currentColor;
+
+        .l-header__contact-icon {
+          background-color: var(--color-white);
+        }
+      }
+    }
+  }
+}
+
+.l-header__contact-icon {
+  display: block;
+  width: 16rem;
+  height: 11.43rem;
+  @include m.mask-img;
+  mask-image: url(../img/common/mail-icon.svg);
+  background-color: currentColor;
+
+  @include g.mq() {
+    width: 23.2rem;
+    height: 16.57rem;
+    transition: background-color var(--duration-base);
+  }
+}
+
+.l-header__drawer-btn {
+  background-color: currentColor;
+  display: grid;
+  place-items: center;
+
+  @media (any-hover: hover) {
+    @include g.mq() {
+      &:hover {
+        background-color: transparent;
+
+        .l-header__drawer-bars {
+          span {
+            background-color: var(--color-bg-primary);
+          }
+        }
+      }
+    }
+  }
+}
+
+.l-header__drawer-bars {
+  width: 44.6%;
+  height: 16.425%;
+  position: relative;
+  transition:
+    width var(--duration-base),
+    height var(--duration-base);
+
+  @include g.mq() {
+    height: 14.88%;
+  }
+
+  span {
+    display: block;
+    background-color: var(--color-white);
+    height: 0.5rem;
+    transform-origin: right;
+    transition:
+      background-color var(--duration-base),
+      width var(--duration-base),
+      transform var(--duration-base);
+    position: absolute;
+    right: 0;
+
+    &:nth-of-type(1) {
+      top: 0;
+      width: 100%;
+    }
+
+    &:nth-of-type(2) {
+      bottom: 0;
+      width: 70%;
+    }
+  }
+}
+
+// ------------------------------
+// drawer open時の設定
+// ------------------------------
+
+.l-header.is-drawer-open {
+  // logoをwhiteに
+  .l-header__logo-link {
+    color: var(--color-white);
+  }
+
+  // navとcontact-btnを非表示にする
+  .l-header__nav,
+  .l-header__contact-btn {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  // drawer-btn-barを×印に
+  .l-header__drawer-btn {
+    .l-header__drawer-bars {
+      width: 42.155%;
+      height: 22.225%;
+
+      span {
+        width: 108%;
+
+        &:nth-of-type(1) {
+          transform: rotate(-26deg);
+        }
+
+        &:nth-of-type(2) {
+          transform: rotate(26deg);
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------
+// 下層ページのheader設定
+// ------------------------------
+.l-header.l-header--sub-page {
+  color: var(--color-white); // currentColorで一括変更
+
+  .l-header__contact-btn {
+    @media (any-hover: hover) {
+      @include g.mq() {
+        &:hover {
+          .l-header__contact-icon {
+            background-color: var(--color-black);
+          }
+        }
+      }
+    }
+  }
+
+  .l-header__drawer-btn {
+    .l-header__drawer-bars {
+      span {
+        background-color: var(--color-black);
+      }
+    }
+
+    @media (any-hover: hover) {
+      @include g.mq() {
+        &:hover {
+          .l-header__drawer-bars {
+            span {
+              background-color: var(--color-white);
+            }
+          }
+        }
+      }
+    }
+  }
+}

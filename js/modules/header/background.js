@@ -4,5 +4,5 @@ import { headerState } from "./state.js"; // header background・drawerの状態
 // header background
 // ============================================================
 export const initHeaderBackground = () => {
-  console.log("background.js読み込み");
+    console.log("background.js読み込み");
 };

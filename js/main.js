@@ -5,6 +5,8 @@ import { initContactForm } from "./pages/contact/contact-form.js";
 // ============================================================
 // init
 // ============================================================
-initModules();
-initTop();
-initContactForm();
+document.addEventListener("DOMContentLoaded", () => {
+  initModules();
+  initTop();
+  initContactForm();
+});
