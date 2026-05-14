@@ -33,25 +33,46 @@ $font-weight: (
 // ==================================================================
 
 // サイズを軸に行間を自動計算
-@mixin font-size($size, $line-height) {
-  font-size: #{$size}rem;
-  line-height: $line-height / $size;
+@mixin font-size($font-size, $line-height) {
+  font-size: #{$font-size}rem;
+  line-height: $line-height / $font-size;
+}
+
+// ==================================================================
+// image-base
+// ==================================================================
+$size: (cover, contain);
+$position: (center, top, bottom, left, right);
+$repeat: (no-repeat, repeat, repeat-x, repeat-y);
+
+@mixin image-base(
+  $prefix,
+  $size: contain,
+  $position: center,
+  $repeat: no-repeat
+) {
+  #{$prefix}-position: $position;
+  #{$prefix}-repeat: $repeat;
+  #{$prefix}-size: $size;
 }
 
 // ==================================================================
 // mask-img
 // ==================================================================
 
-@mixin mask-img {
-  mask: no-repeat center / contain;
+@mixin mask-img($size: contain, $position: center, $repeat: no-repeat) {
+  @include image-base(mask, $size, $position, $repeat);
+
+  // Safari 対策
+  -webkit-mask-position: $position;
+  -webkit-mask-repeat: $repeat;
+  -webkit-mask-size: $size;
 }
 
 // ==================================================================
 // background-img
 // ==================================================================
 
-@mixin background-img {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+@mixin background-img($size: contain, $position: center, $repeat: no-repeat) {
+  @include image-base(background, $size, $position, $repeat);
 }
