@@ -108,7 +108,7 @@
   color: currentColor;
 
   @include g.mq() {
-    @include m.font-size($size: 14, $line-height: 14);
+    @include m.font-size($font-size: 14, $line-height: 14);
   }
 }
 
