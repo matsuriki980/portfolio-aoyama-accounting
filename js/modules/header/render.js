@@ -13,9 +13,19 @@ export const headerRender = () => {
   if (!header || !drawer) return;
 
   // ==========================================================
+  // header background
+  // ==========================================================
+
+  // triggerを超えてかつ、drawer close時にheader背景を表示する
+  header.classList.toggle(
+    "is-active",
+    headerState.isPostTrigger && !headerState.isDrawerOpen,
+  );
+
+  // ==========================================================
   // drawer
   // ==========================================================
-  header.classList.toggle("is-drawer-open", headerState.isDrawerOpen);
+  header.classList.toggle("is-drawer-open", headerState.isDrawerOpen); // ナビゲーションとお問い合わせボタンを非表示に
   drawer.classList.toggle("is-open", headerState.isDrawerOpen);
   document.body.classList.toggle("is-drawer-open", headerState.isDrawerOpen); // drawer open時スクロールを止める
 
@@ -23,7 +33,7 @@ export const headerRender = () => {
   // drawer sub-page
   // ==========================================================
 
-  // 下層ページなら専用クラスを外しdrawer-btnの色を黒に
+  // drawer open時のみ下層ページ用classを外す
   header.classList.toggle(
     "l-header--sub-page",
     isSubPage && !headerState.isDrawerOpen,
