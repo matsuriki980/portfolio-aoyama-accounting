@@ -585,13 +585,23 @@ utility
   width: 70%;
 }
 
-.l-header.is-drawer-open .l-header__logo-link {
-  color: var(--color-white);
-}
+.l-header.is-drawer-open .l-header__logo-link,
 .l-header.is-drawer-open .l-header__nav,
 .l-header.is-drawer-open .l-header__contact-btn {
   opacity: 0;
   visibility: hidden;
+}
+@media screen and (min-width: 900px) {
+  .l-header.is-drawer-open .l-header__logo-link {
+    color: var(--color-white);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media screen and (min-width: 900px) and (any-hover: hover) {
+  .l-header.is-drawer-open .l-header__logo-link:hover {
+    opacity: 0.6;
+  }
 }
 .l-header.is-drawer-open .l-header__drawer-btn .l-header__drawer-bars {
   width: 42.155%;

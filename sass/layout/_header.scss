@@ -232,16 +232,26 @@
 // ------------------------------
 
 .l-header.is-drawer-open {
-  // logoをwhiteに
-  .l-header__logo-link {
-    color: var(--color-white);
-  }
-
-  // navとcontact-btnを非表示にする
+  // logoとnavとcontact-btnを非表示にする
+  .l-header__logo-link,
   .l-header__nav,
   .l-header__contact-btn {
     opacity: 0;
     visibility: hidden;
+  }
+
+  @include g.mq() {
+    .l-header__logo-link {
+      color: var(--color-white);
+      opacity: 1;
+      visibility: visible;
+
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 
   // drawer-btn-barを×印に
