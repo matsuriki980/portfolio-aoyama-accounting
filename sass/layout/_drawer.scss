@@ -183,6 +183,9 @@
     visibility: hidden;
     position: absolute;
     inset: 0;
+    transition:
+      opacity var(--duration-base),
+      visibility var(--duration-base);
 
     img {
       height: 100%;
