@@ -31,16 +31,6 @@ export const headerRender = () => {
   document.body.classList.toggle("is-drawer-open", headerState.isDrawerOpen); // drawer open時スクロールを止める
 
   // ==========================================================
-  // drawer sub-page
-  // ==========================================================
-
-  // drawer open時のみ下層ページ用classを外す
-  header.classList.toggle(
-    "l-header--sub-page",
-    isSubPage && !headerState.isDrawerOpen,
-  );
-
-  // ==========================================================
   // drawer hover img
   // ==========================================================
 
@@ -56,4 +46,14 @@ export const headerRender = () => {
 
   // active付与
   activeImg.classList.add("is-active");
+
+  // ==========================================================
+  // sub-page
+  // ==========================================================
+
+  // 下層ページでは、trigger通過後とdrawer open時に専用クラスを外す
+  header.classList.toggle(
+    "l-header--sub-page",
+    isSubPage && !headerState.isPostTrigger && !headerState.isDrawerOpen,
+  );
 };
