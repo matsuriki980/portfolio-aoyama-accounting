@@ -8,7 +8,7 @@
 .l-drawer {
   position: fixed;
   inset: 0;
-  z-index: var(--z-index-l-drawer);
+  z-index: var(--z-index-drawer);
   opacity: 0;
   visibility: hidden;
   transition:
