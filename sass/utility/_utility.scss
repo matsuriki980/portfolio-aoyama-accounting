@@ -46,3 +46,9 @@ utility
     display: block;
   }
 }
+
+.pc-hidden {
+  @include g.mq() {
+    display: none;
+  }
+}

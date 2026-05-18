@@ -5,3 +5,39 @@
  component > title
 ------------------------------
 */
+.c-title__wrap {
+}
+
+.c-title {
+  color: currentColor;
+}
+
+.c-title--ja {
+  @include m.font-size($font-size: 16, $line-height: 42);
+  @include m.font-family-base($weight: "Medium");
+  display: flex;
+  gap: 15rem;
+  align-items: center;
+
+  // □の装飾
+  &::before {
+    content: "";
+    display: block;
+    width: 15rem;
+    aspect-ratio: 1/1;
+    background-color: var(--color-accent-primary);
+  }
+}
+
+.c-title--en {
+  @include m.font-family-en($weight: "ExtraLight");
+  @include m.letter-spacing($letter-spacing: -5);
+}
+
+.c-title--base {
+  font-size: 64rem;
+
+  @include g.mq() {
+    font-size: 110rem;
+  }
+}

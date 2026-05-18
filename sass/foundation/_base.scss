@@ -25,7 +25,6 @@ html {
 }
 
 body {
-  line-height: 2;
   @include m.font-family-base;
   @include m.font-size(16,32);
 

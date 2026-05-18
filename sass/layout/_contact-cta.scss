@@ -5,3 +5,142 @@
  layout > contact-cta
 ------------------------------
 */
+.contact-cta {
+  background-color: var(--color-bg-primary);
+}
+
+.contact-cta__inner {
+  padding: 50rem 30rem;
+
+  @include g.mq() {
+    padding: 90rem 60rem;
+  }
+}
+
+.contact-cta__body {
+  background-color: var(--color-bg-secondary);
+  border-radius: 10rem;
+  position: relative;
+  height: 555rem;
+  padding-block: 30rem 36rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include g.mq() {
+    padding: 0 60rem;
+    display: grid;
+    grid-template-columns: 1fr 570rem;
+    align-items: center;
+    height: 540rem;
+  }
+
+  // 背景テクスチャ
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    mask-image: url(../img/common/bg-lattice-contact-cta.svg);
+    @include m.mask-img(cover);
+    background-color: var(--color-bg-primary);
+
+    @include g.mq() {
+      mask-image: url(../img/common/bg-lattice.svg);
+    }
+  }
+}
+
+.contact-cta__content {
+  padding: 0 30rem;
+  position: relative;
+  z-index: var(--z-index-default);
+}
+
+.contact-cta__title-wrap {
+  color: var(--color-text-primary);
+}
+
+.contact-cta__title--en {
+  @include m.font-size($font-size: 58, $line-height: 58);
+
+  @include g.mq() {
+    font-size: 110rem;
+  }
+}
+
+.contact-cta__text {
+  font-size: 14rem;
+  text-align: center;
+  margin-top: 16rem;
+
+  @include g.mq() {
+    text-align: left;
+    margin-top: 38rem;
+    font-size: 16rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.contact-cta__btn {
+  color: var(--color-text-primary);
+  opacity: 0.4;
+  transition: opacity var(--duration-base);
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+
+  @include g.mq() {
+    margin-top: 34rem;
+    justify-content: flex-start;
+  }
+
+  // hover時、透過解除
+  @media (any-hover: hover) {
+    &:has(.btn-arrow:hover) {
+      opacity: 1;
+    }
+  }
+}
+
+.contact-cta__visual {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+  position: relative;
+  z-index: var(--z-index-default);
+  height: 39%;
+  width: 100%;
+
+  @include g.mq() {
+    flex-direction: row;
+    gap: 30rem;
+    height: 100%;
+  }
+}
+
+.contact-cta__slider {
+  width: 100%;
+  height: 100%;
+
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    width: 100%;
+    height: 1020rem;
+  }
+}
+
+.contact-cta__img {
+  overflow: hidden;
+  border-radius: 5rem;
+  width: 150rem;
+  height: 100%;
+
+  @include g.mq() {
+    width: 270rem;
+  }
+}

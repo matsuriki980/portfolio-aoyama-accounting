@@ -282,7 +282,6 @@ html {
 }
 
 body {
-  line-height: 2;
   font-family: var(--font-family-base);
   font-weight: 400;
   font-size: 16rem;
@@ -297,14 +296,70 @@ body {
  component > btn-arrow
 ------------------------------
 */
+.btn-arrow {
+  display: grid;
+  place-items: center;
+  width: 84rem;
+  height: 30rem;
+  border: 1rem solid currentColor;
+  border-radius: 15rem;
+}
+
+.btn-arrow__icon {
+  width: 30rem;
+  height: 8rem;
+  display: block;
+  -webkit-mask-image: url(../img/common/btn_arrow.svg);
+          mask-image: url(../img/common/btn_arrow.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  background-color: currentColor;
+}
+
 /*!
  component > title
 ------------------------------
 */
-/*!
- component > title-small
-------------------------------
-*/
+.c-title {
+  color: currentColor;
+}
+
+.c-title--ja {
+  font-size: 16rem;
+  line-height: 2.625;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  display: flex;
+  gap: 15rem;
+  align-items: center;
+}
+.c-title--ja::before {
+  content: "";
+  display: block;
+  width: 15rem;
+  aspect-ratio: 1/1;
+  background-color: var(--color-accent-primary);
+}
+
+.c-title--en {
+  font-family: var(--font-family-en);
+  font-weight: 200;
+  letter-spacing: -0.05em;
+}
+
+.c-title--base {
+  font-size: 64rem;
+}
+@media screen and (min-width: 900px) {
+  .c-title--base {
+    font-size: 110rem;
+  }
+}
+
 /*!
  component > marquee
 ------------------------------
@@ -362,6 +417,12 @@ utility
 @media screen and (min-width: 900px) {
   .sp-hidden {
     display: block;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .pc-hidden {
+    display: none;
   }
 }
 
@@ -641,7 +702,7 @@ utility
 .l-drawer {
   position: fixed;
   inset: 0;
-  z-index: var(--z-index-l-drawer);
+  z-index: var(--z-index-drawer);
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--duration-base), visibility var(--duration-base);
@@ -837,6 +898,156 @@ body.is-drawer-open {
  layout > contact-cta
 ------------------------------
 */
+.contact-cta {
+  background-color: var(--color-bg-primary);
+}
+
+.contact-cta__inner {
+  padding: 50rem 30rem;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__inner {
+    padding: 90rem 60rem;
+  }
+}
+
+.contact-cta__body {
+  background-color: var(--color-bg-secondary);
+  border-radius: 10rem;
+  position: relative;
+  height: 555rem;
+  padding-block: 30rem 36rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__body {
+    padding: 0 60rem;
+    display: grid;
+    grid-template-columns: 1fr 570rem;
+    align-items: center;
+    height: 540rem;
+  }
+}
+.contact-cta__body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: url(../img/common/bg-lattice-contact-cta.svg);
+          mask-image: url(../img/common/bg-lattice-contact-cta.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  background-color: var(--color-bg-primary);
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__body::before {
+    -webkit-mask-image: url(../img/common/bg-lattice.svg);
+            mask-image: url(../img/common/bg-lattice.svg);
+  }
+}
+
+.contact-cta__content {
+  padding: 0 30rem;
+  position: relative;
+  z-index: var(--z-index-default);
+}
+
+.contact-cta__title-wrap {
+  color: var(--color-text-primary);
+}
+
+.contact-cta__title--en {
+  font-size: 58rem;
+  line-height: 1;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__title--en {
+    font-size: 110rem;
+  }
+}
+
+.contact-cta__text {
+  font-size: 14rem;
+  text-align: center;
+  margin-top: 16rem;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__text {
+    text-align: left;
+    margin-top: 38rem;
+    font-size: 16rem;
+  }
+}
+.contact-cta__text span {
+  display: block;
+}
+
+.contact-cta__btn {
+  color: var(--color-text-primary);
+  opacity: 0.4;
+  transition: opacity var(--duration-base);
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__btn {
+    margin-top: 34rem;
+    justify-content: flex-start;
+  }
+}
+@media (any-hover: hover) {
+  .contact-cta__btn:has(.btn-arrow:hover) {
+    opacity: 1;
+  }
+}
+
+.contact-cta__visual {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+  position: relative;
+  z-index: var(--z-index-default);
+  height: 39%;
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__visual {
+    flex-direction: row;
+    gap: 30rem;
+    height: 100%;
+  }
+}
+
+.contact-cta__slider {
+  width: 100%;
+  height: 100%;
+}
+.contact-cta__slider .swiper-wrapper {
+  transition-timing-function: linear;
+  width: 100%;
+  height: 1020rem;
+}
+
+.contact-cta__img {
+  overflow: hidden;
+  border-radius: 5rem;
+  width: 150rem;
+  height: 100%;
+}
+@media screen and (min-width: 900px) {
+  .contact-cta__img {
+    width: 270rem;
+  }
+}
+
 /*!
  layout > footer
  ------------------------------
