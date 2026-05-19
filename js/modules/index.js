@@ -2,9 +2,9 @@
 // modules
 // ============================================================
 import { initHeader } from "./header/index.js";
-import { initContactCtaSlider } from "./contact-cta-slider.js";
+import { initFooterContactSlider } from "./footer-contact-slider.js";
 
 export const initModules = () => {
   initHeader();
-  initContactCtaSlider();
+  initFooterContactSlider();
 };
