@@ -39,6 +39,33 @@ utility
   }
 }
 
+// 子を持つナビゲーションのホバー処理
+.u-nav__link-child {
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+
+  // line
+  &::before {
+    content: "";
+    display: block;
+    width: 8rem;
+    height: 1rem;
+    background-color: currentColor;
+  }
+
+  @media (any-hover: hover) {
+    @include g.mq() {
+      transition: opacity var(--duration-base);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .sp-hidden {
   display: none;
 
