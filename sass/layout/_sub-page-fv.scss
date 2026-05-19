@@ -5,3 +5,91 @@
  layout > sub-page-fv
 ------------------------------
  */
+
+.l-sub-fv {
+  width: 100%;
+  height: 436rem;
+  overflow: hidden;
+}
+
+.l-sub-fv__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include m.background-img(cover);
+  color: var(--color-white);
+  display: flex;
+  align-items: flex-end;
+
+  // 黒透過を配置
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(29, 29, 29, 1) 0%,
+      rgba(29, 29, 29, 0.2) 100%
+    );
+  }
+}
+
+.l-sub-fv__title-wrap {
+  position: relative;
+  margin-bottom: 18rem;
+
+  @include g.mq() {
+    margin-bottom: 0;
+  }
+}
+
+.l-sub-fv__title {
+  color: currentColor;
+}
+
+.l-sub-fv__title--ja {
+  @include m.font-family-base($weight: "Medium");
+  @include m.font-size($font-size: 16, $line-height: 42);
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+
+  @include g.mq() {
+    @include m.font-size($font-size: 20, $line-height: 42);
+    gap: 20rem;
+  }
+
+  // 装飾線
+  &::before {
+    content: "";
+    display: block;
+    width: 26rem;
+    height: 1rem;
+    background-color: var(--color-white);
+
+    @include g.mq() {
+      width: 100rem;
+    }
+  }
+}
+
+.l-sub-fv__title--en {
+  text-transform: capitalize;
+  @include m.font-family-en($weight: "ExtraLight");
+  @include m.font-size($font-size: 72, $line-height: 80);
+  @include m.letter-spacing($letter-spacing: -2);
+  margin-left: 16rem;
+
+  @include g.mq() {
+    @include m.font-size($font-size: 190, $line-height: 110);
+    margin: 40rem 0 0 110rem;
+  }
+
+  span {
+    display: block;
+
+    @include g.mq() {
+      display: inline-block;
+    }
+  }
+}
