@@ -5,3 +5,12 @@
  feature
 ------------------------------
  */
+
+// 背景画像を設定
+.feature-fv__inner {
+  background-image: url(../feature/img/feature-kv-sp.jpg);
+
+  @include g.mq() {
+    background-image: url(../feature/img/feature-kv.jpg);
+  }
+}
