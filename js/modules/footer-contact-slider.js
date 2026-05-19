@@ -1,20 +1,22 @@
 // ============================================================
 // contact-cta slider
 // ============================================================
-export const initContactCtaSlider = () => {
+export const initFooterContactSlider = () => {
+
   // 一番目のスライダー
   const contactCtaSliderPrimary = document.querySelector(
-    ".js-contact-cta__slider-primary",
+    ".js-footer__contact-slider-primary",
   );
 
   // 二番目のスライダー
   const contactCtaSliderSecondary = document.querySelector(
-    ".js-contact-cta__slider-secondary",
+    ".js-footer__contact-slider-secondary",
   );
 
   if (!contactCtaSliderPrimary || !contactCtaSliderSecondary) return;
 
   const SwiperPrimary = new Swiper(contactCtaSliderPrimary, {
+
     spaceBetween: 8,
     centeredSlides: true,
     slidesPerView: 2,
