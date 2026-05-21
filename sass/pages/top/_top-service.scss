@@ -5,3 +5,222 @@
  top > top-service
 ------------------------------
  */
+
+.top-service__inner {
+}
+
+.top-service__head {
+  padding-inline: 30rem 45rem;
+
+  @include g.mq() {
+    padding-inline: 60rem 90rem;
+    display: grid;
+    grid-template-columns: 780rem 435rem;
+  }
+}
+
+.top-service__title--en {
+  // 上下に配置する装飾線の設定
+
+  &::before {
+    width: 180rem;
+    top: 7.5rem;
+    left: -11rem;
+  }
+
+  &::after {
+    width: 195rem;
+    bottom: 6.5rem;
+    right: 0;
+  }
+
+  &::before,
+  &::after {
+    @include g.mq() {
+      width: 476rem;
+    }
+  }
+
+  &::before {
+    @include g.mq() {
+      top: 16rem;
+      left: -30rem;
+    }
+  }
+
+  &::after {
+    @include g.mq() {
+      bottom: 12rem;
+    }
+  }
+}
+
+.top-service__btn {
+  display: none;
+
+  @include g.mq() {
+    display: block;
+    margin-top: 80rem;
+  }
+}
+
+.top-service__content {
+  margin-top: 40rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+
+  @include g.mq() {
+    margin-top: 80rem;
+    border: 0;
+  }
+}
+
+.top-service__card {
+  width: 330rem;
+  border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+
+  @include g.mq() {
+    width: 100%;
+    background-color: var(--color-white);
+    padding-bottom: 180rem;
+
+    // 1つ目と3つ目のcardのtop borderは-30remの長さに設定
+    &:nth-of-type(1),
+    &:nth-of-type(3) {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        opacity: 0.2;
+        background-color: var(--color-accent-primary);
+        width: calc(100% - 30rem);
+        height: 0.5px;
+      }
+    }
+
+    &:nth-of-type(1) {
+      &::before {
+        right: 0;
+      }
+    }
+
+    // 1つ目と2つめをtransformで上下にずらす
+    &:nth-of-type(2) {
+      transform: translateY(30rem);
+      border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    }
+
+    &:nth-of-type(3) {
+      transform: translateY(60rem);
+      border-right: 0; // 3つ目のcardの右線を削除する
+    }
+  }
+}
+
+.top-service__card-link {
+  padding: 45rem 30rem;
+  display: block;
+
+  @include g.mq() {
+    width: 100%;
+    padding: 60rem 60rem 0;
+  }
+}
+
+.top-service__card-img {
+  overflow: hidden;
+  border-radius: 10rem;
+
+  img {
+    transition: scale var(--duration-base);
+  }
+}
+
+.top-service__card-content {
+  margin-top: 25rem;
+
+  @include g.mq() {
+    margin-top: 40rem;
+  }
+}
+
+.top-service__card__title--ja {
+  @include m.font-size($font-size: 20, $line-height: 22);
+  @include m.letter-spacing($letter-spacing: 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include g.mq() {
+    @include m.font-size($font-size: 28, $line-height: 22);
+  }
+}
+
+// 装飾の□の設定
+.top-service__card__title-decoration-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.top-service__card__title-decoration {
+  display: block;
+  width: 15rem;
+  aspect-ratio: 1/1;
+
+  // 1つ目
+  &:nth-of-type(1) {
+    background-color: var(--color-accent-primary);
+  }
+
+  // 2つ目
+  &:nth-of-type(2) {
+    background-color: var(--color-accent-secondary);
+  }
+
+  // 3つ目
+  &:nth-of-type(3) {
+    background-color: var(--color-accent-tertiary);
+  }
+}
+
+.top-service__card__title--en {
+  @include m.font-family-en($weight: "ExtraLight");
+  @include m.font-size($font-size: 14, $line-height: 28);
+  margin-top: 4rem;
+
+  @include g.mq() {
+    margin-top: 8rem;
+  }
+}
+
+.top-service__card-btn {
+  margin-top: 11rem;
+  opacity: 0.4;
+
+  @include g.mq() {
+    margin-top: 20rem;
+    transition: opacity var(--duration-base);
+  }
+}
+
+// hover時のアニメーション設定
+.top-service__card-link {
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        // hover時、画像を拡大
+        .top-service__card-img {
+          img {
+            scale: (1.1);
+          }
+        }
+
+        .top-service__card-btn {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

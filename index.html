@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/common/favicon.ico">
 
     <!-- cssを読み込む -->
+
     <link rel="stylesheet" href="css/vendor/swiper.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -26,7 +27,7 @@
 <body>
 
     <!-- header -->
-    <header class="l-header js-header">
+    <header class="l-header js-header" style="display: none;">
         <div class="l-header__inner">
 
             <!-- logo -->
@@ -227,6 +228,142 @@
             </div>
         </div>
     </div>
+
+    <!-- main content -->
+    <main>
+        <!-- service -->
+        <section class="top-service">
+            <div class="top-service__inner">
+                <div class="top-service__head">
+
+                    <!-- title -->
+                    <div class="top-service__title-wrap c-title__wrap">
+                        <p class="c-title c-title--ja">
+                            サービス内容
+                        </p>
+
+                        <h2 class="c-title c-title--en c-title--base top-service__title top-service__title--en">
+                            our service
+                        </h2>
+                    </div>
+
+                    <!-- btn -->
+                    <div class="top-service__btn">
+                        <a href="service/" class="c-btn">
+                            <span class="c-btn__border"></span>
+                            <span class="c-btn__text-wrap">
+                                <span class="c-btn__text c-btn__text--primary">サービス内容について詳しく見る</span>
+                                <span class="c-btn__text c-btn__text--secondary sp-hidden">サービス内容について詳しく見る</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slider main container -->
+                <div class="swiper top-service__content">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide top-service__card">
+                            <a href="service/#tax" class="top-service__card-link">
+
+                                <!-- img -->
+                                <div class="top-service__card-img">
+                                    <img src="img/top/top-service01.jpg" width="270" height="330" alt="税理・会計">
+                                </div>
+
+                                <!-- content -->
+                                <div class="top-service__card-content">
+                                    <h3 class="top-service__card__title top-service__card__title--ja">
+                                        税務・会計
+
+                                        <span class="top-service__card__title-decoration-wrap">
+                                            <span class="top-service__card__title-decoration"></span>
+                                        </span>
+                                    </h3>
+
+                                    <p class="top-service__card__title top-service__card__title--en">
+                                        Tax & Accounting
+                                    </p>
+
+                                    <div class="top-service__card-btn">
+                                        <span class="c-btn-arrow">
+                                            <span class="c-btn-arrow__icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide top-service__card">
+                            <a href="service/#capital" class="top-service__card-link">
+
+                                <!-- img -->
+                                <div class="top-service__card-img">
+                                    <img src="img/top/top-service02.jpg" width="270" height="330" alt="税理・会計">
+                                </div>
+
+                                <!-- content -->
+                                <div class="top-service__card-content">
+                                    <h3 class="top-service__card__title top-service__card__title--ja">
+                                        相続・贈与・譲渡所得
+
+                                        <span class="top-service__card__title-decoration-wrap">
+                                            <span class="top-service__card__title-decoration"></span>
+                                            <span class="top-service__card__title-decoration"></span>
+                                        </span>
+                                    </h3>
+
+                                    <p class="top-service__card__title top-service__card__title--en">
+                                        Capital gains
+                                    </p>
+
+                                    <div class="top-service__card-btn">
+                                        <span class="c-btn-arrow">
+                                            <span class="c-btn-arrow__icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide top-service__card">
+                            <a href="service/#support" class="top-service__card-link">
+
+                                <!-- img -->
+                                <div class="top-service__card-img">
+                                    <img src="img/top/top-service03.jpg" width="270" height="330" alt="税理・会計">
+                                </div>
+
+                                <!-- content -->
+                                <div class="top-service__card-content">
+                                    <h3 class="top-service__card__title top-service__card__title--ja">
+                                        設立・開業支援
+
+                                        <span class="top-service__card__title-decoration-wrap">
+                                            <span class="top-service__card__title-decoration"></span>
+                                            <span class="top-service__card__title-decoration"></span>
+                                            <span class="top-service__card__title-decoration"></span>
+                                        </span>
+                                    </h3>
+
+                                    <p class="top-service__card__title top-service__card__title--en">
+                                        Support for opening a business
+                                    </p>
+
+                                    <div class="top-service__card-btn">
+                                        <span class="c-btn-arrow">
+                                            <span class="c-btn-arrow__icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- footer -->
     <footer class="l-footer">
