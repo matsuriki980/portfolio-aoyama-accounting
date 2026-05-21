@@ -516,6 +516,65 @@ body {
  component > voice-item
 ------------------------------
 */
+.c-voice__item {
+  border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.c-voice__link {
+  display: block;
+  padding: 30rem;
+}
+@media screen and (min-width: 900px) {
+  .c-voice__link {
+    padding: 60rem;
+  }
+}
+@media screen and (min-width: 900px) and (any-hover: hover) {
+  .c-voice__link:hover img {
+    scale: 1.1;
+  }
+}
+
+.c-voice__number {
+  color: var(--color-white);
+  font-family: var(--font-family-en);
+  font-weight: 300;
+  font-size: 14rem;
+  line-height: 0.7142857143;
+  letter-spacing: 0.02em;
+}
+
+.c-voice__img {
+  overflow: hidden;
+  border-radius: 10rem;
+  margin-top: 20rem;
+  width: 100%;
+  aspect-ratio: 9/10;
+}
+.c-voice__img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: scale var(--duration-base);
+}
+
+.c-voice__item-title {
+  opacity: 0.5;
+  color: currentColor;
+  font-size: 14rem;
+  line-height: 1.4285714286;
+  letter-spacing: 0.1em;
+  margin-top: 26rem;
+}
+
+.c-voice__text {
+  color: currentColor;
+  font-size: 18rem;
+  line-height: 1.7777777778;
+  letter-spacing: 0.06em;
+  margin-top: 5rem;
+}
+
 /*!
  component > contact-label
 ------------------------------
@@ -1530,12 +1589,10 @@ body.is-drawer-open {
 }
 
 .top-service__card {
-  width: 330rem;
   border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
 }
 @media screen and (min-width: 900px) {
   .top-service__card {
-    width: 100%;
     background-color: var(--color-white);
     padding-bottom: 180rem;
   }
@@ -1668,6 +1725,84 @@ body.is-drawer-open {
  top > top-voice
 ------------------------------
  */
+.top-voice {
+  background-color: var(--color-bg-primary);
+  color: var(--color-white);
+}
+
+.top-voice__inner {
+  padding-block: 60rem;
+}
+@media screen and (min-width: 900px) {
+  .top-voice__inner {
+    display: flex;
+    padding-block: 180rem 150rem;
+    padding-inline: 30rem;
+  }
+}
+
+.top-voice__content {
+  padding-inline: 30rem;
+}
+@media screen and (min-width: 900px) {
+  .top-voice__content {
+    border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    padding: 90rem 48rem 60rem 90rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.top-voice__title--en {
+  font-size: 64rem;
+}
+@media screen and (min-width: 900px) {
+  .top-voice__title--en {
+    font-size: 76rem;
+  }
+}
+.top-voice__title--en span {
+  letter-spacing: -0.03em;
+}
+
+@media screen and (min-width: 900px) {
+  .top-voice__btn-arrow-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+  }
+}
+
+.top-voice__btn-arrow {
+  opacity: 0.3;
+  transition: opacity var(--duration-base);
+}
+@media screen and (min-width: 900px) and (any-hover: hover) {
+  .top-voice__btn-arrow:hover {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .top-voice__btn-arrow--prev {
+    transform: scaleX(-1);
+  }
+}
+
+.top-voice__list {
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  margin-top: 36rem;
+}
+@media screen and (min-width: 900px) {
+  .top-voice__list {
+    margin-top: 0;
+  }
+}
+
 /*!
  top > top-news
 ------------------------------
