@@ -76,11 +76,9 @@
 }
 
 .top-service__card {
-  width: 330rem;
   border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
 
   @include g.mq() {
-    width: 100%;
     background-color: var(--color-white);
     padding-bottom: 180rem;
 

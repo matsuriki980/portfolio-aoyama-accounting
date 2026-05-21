@@ -5,3 +5,60 @@
  component > voice-item
 ------------------------------
 */
+.c-voice__item {
+  border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.c-voice__link {
+  display: block;
+  padding: 30rem;
+
+  @include g.mq() {
+    padding: 60rem;
+
+    // リンクをhover時、画像を拡大する
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          scale: (1.1);
+        }
+      }
+    }
+  }
+}
+
+.c-voice__number {
+  color: var(--color-white);
+  @include m.font-family-en($weight: "Light");
+  @include m.font-size($font-size: 14, $line-height: 10);
+  @include m.letter-spacing($letter-spacing: 2);
+}
+
+.c-voice__img {
+  overflow: hidden;
+  border-radius: 10rem;
+  margin-top: 20rem;
+  width: 100%;
+  aspect-ratio: 9/10;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    transition: scale var(--duration-base);
+  }
+}
+
+.c-voice__item-title {
+  opacity: 0.5;
+  color: currentColor;
+  @include m.font-size($font-size: 14, $line-height: 20);
+  @include m.letter-spacing($letter-spacing: 10);
+  margin-top: 26rem;
+}
+
+.c-voice__text {
+  color: currentColor;
+  @include m.font-size($font-size: 18, $line-height: 32);
+  @include m.letter-spacing($letter-spacing: 6);
+  margin-top: 5rem;
+}
