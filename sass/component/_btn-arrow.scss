@@ -5,7 +5,7 @@
  component > btn-arrow
 ------------------------------
 */
-.btn-arrow {
+.c-btn-arrow {
   display: grid;
   place-items: center;
   width: 84rem;
@@ -14,7 +14,7 @@
   border-radius: 15rem;
 }
 
-.btn-arrow__icon {
+.c-btn-arrow__icon {
   width: 30rem;
   height: 8rem;
   display: block;
