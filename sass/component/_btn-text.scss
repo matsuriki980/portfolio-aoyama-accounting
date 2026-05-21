@@ -5,3 +5,132 @@
  component > btn-text
 ------------------------------
 */
+.c-btn {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  gap: 15rem;
+  align-items: center;
+
+  @include g.mq() {
+    align-items: stretch;
+    height: 30rem;
+    grid-template-columns: 163rem auto;
+  }
+}
+
+.c-btn__border {
+  @include g.mq() {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  // border設定
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: currentColor;
+
+    @include g.mq() {
+      position: absolute;
+      top: 50%;
+    }
+  }
+
+  &::before {
+    @include g.mq() {
+      left: 0;
+    }
+  }
+
+  &::after {
+    display: none;
+
+    @include g.mq() {
+      display: block;
+      left: -100%;
+    }
+  }
+}
+
+.c-btn__text-wrap {
+  @include g.mq() {
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+.c-btn__text {
+  display: inline-block;
+  height: 100%;
+
+  @include g.mq() {
+    position: absolute;
+
+    // 1段目のテキスト
+    &--primary {
+      top: 0;
+    }
+
+    // 2段目のテキスト
+    &--secondary {
+      top: 100%;
+    }
+  }
+}
+
+// btn hover時のアニメーション設定
+.c-btn {
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        // hover時、borderを左から右に流す
+        .c-btn__border {
+          &::before,
+          &::after {
+            animation-name: line-sweep-right;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+          }
+
+          &::after {
+            animation-delay: 0.2s;
+          }
+        }
+
+        // hover時、textをY方向に回転させる
+        .c-btn__text {
+          animation-name: text-rotate-y;
+          animation-duration: 0.3s;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+  }
+}
+
+// borderアニメーション設定
+@keyframes line-sweep-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+// textアニメーション設定
+@keyframes text-rotate-y {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
