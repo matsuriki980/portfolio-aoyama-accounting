@@ -6,6 +6,12 @@
 ------------------------------
  */
 
+.top-service {
+  @include g.mq() {
+    // margin-bottom: -60rem;
+  }
+}
+
 .top-service__inner {
 }
 
@@ -72,6 +78,14 @@
   @include g.mq() {
     margin-top: 80rem;
     border: 0;
+    overflow: visible;
+  }
+}
+
+.top-service__content-inner {
+  @include g.mq() {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
