@@ -27,6 +27,7 @@ html {
 body {
   @include m.font-family-base;
   @include m.font-size(16,32);
+  color: var(--color-text-primary);
 
   // @include g.mq() {
   //   font-size: 18rem;
