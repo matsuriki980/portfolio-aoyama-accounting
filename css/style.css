@@ -547,15 +547,9 @@ body {
 .c-marquee span {
   font-family: var(--font-family-en);
   font-weight: 200;
-  font-size: 125rem;
   line-height: 0.55;
   letter-spacing: -0.02em;
   display: inline-block;
-}
-@media screen and (min-width: 900px) {
-  .c-marquee span {
-    font-size: 250rem;
-  }
 }
 
 /* テキストを左向きに流す */
@@ -1991,6 +1985,14 @@ body.is-drawer-open {
 .top-about__marquee::before, .top-about__marquee::after {
   height: 0.8rem;
 }
+.top-about__marquee span {
+  font-size: 125rem;
+}
+@media screen and (min-width: 900px) {
+  .top-about__marquee span {
+    font-size: 250rem;
+  }
+}
 
 .top-about__marquee__inner {
   animation-name: marquee-left;
@@ -2210,6 +2212,208 @@ body.is-drawer-open {
  top > top-feature
 ------------------------------
  */
+.top-feature {
+  background-color: var(--color-bg-secondary);
+  position: relative;
+}
+
+.top-feature__inner {
+  padding: 80rem 30rem;
+  position: relative;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__inner {
+    padding: 160rem 90rem 255rem;
+  }
+}
+.top-feature__inner::before, .top-feature__inner::after {
+  content: "";
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  aspect-ratio: 1/1;
+}
+.top-feature__inner::before {
+  background-image: url(../img/top/top-feature-decoration-right.svg);
+  width: 60rem;
+  top: 15rem;
+  right: 15rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__inner::before {
+    width: 120rem;
+    top: 240rem;
+    right: 90rem;
+  }
+}
+.top-feature__inner::after {
+  background-image: url(../img/top/top-feature-decoration-left.svg);
+  width: 45rem;
+  bottom: 15rem;
+  left: 15rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__inner::after {
+    width: 90rem;
+    bottom: 150rem;
+    left: 90rem;
+  }
+}
+
+.top-feature__title--en {
+  display: inline-block;
+}
+.top-feature__title--en::before {
+  width: 180rem;
+  top: 8rem;
+  left: -15rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__title--en::before {
+    width: 330rem;
+    left: -30rem;
+    top: 18rem;
+  }
+}
+.top-feature__title--en::after {
+  width: 187rem;
+  bottom: 6rem;
+  right: -12rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__title--en::after {
+    width: 380rem;
+    bottom: 12rem;
+    right: -45rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .top-feature__body {
+    display: grid;
+    grid-template-columns: 360rem 1fr;
+    gap: 120rem;
+    margin-top: 120rem;
+  }
+}
+
+.top-feature__img-wrap {
+  position: relative;
+  width: 250rem;
+  height: 335rem;
+  margin: 54rem auto 0;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__img-wrap {
+    margin-top: 0;
+    width: 100%;
+    height: 483rem;
+  }
+}
+
+.top-feature__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10rem;
+  width: 100%;
+  height: 100%;
+}
+.top-feature__img:nth-of-type(1) {
+  transform: rotate(-6deg);
+  z-index: 2;
+}
+.top-feature__img:nth-of-type(2) {
+  z-index: var(--z-index-default);
+}
+.top-feature__img:nth-of-type(2)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-bg-primary);
+  opacity: 0.4;
+}
+
+.top-feature__content {
+  margin-top: 45rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__content {
+    margin-top: 0;
+  }
+}
+
+.top-feature__lead {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 26rem;
+  line-height: 1.6153846154;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__lead {
+    font-size: 40rem;
+    line-height: 1.2;
+  }
+}
+.top-feature__lead span {
+  display: block;
+}
+
+.top-feature__text {
+  margin-top: 18rem;
+  font-size: 16rem;
+  line-height: 2;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__text {
+    margin-top: 265rem;
+  }
+}
+.top-feature__text span {
+  display: block;
+  letter-spacing: 0.1em;
+}
+
+.top-feature__btn {
+  margin-top: 40rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__btn {
+    margin-top: 38rem;
+  }
+}
+
+.top-feature__marquee {
+  color: var(--color-white);
+  margin-top: 52rem;
+  overflow: visible;
+  position: absolute;
+  top: 320rem;
+  z-index: 0;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__marquee {
+    margin-top: 180rem;
+    top: 370rem;
+  }
+}
+.top-feature__marquee span {
+  font-size: 132rem;
+}
+@media screen and (min-width: 900px) {
+  .top-feature__marquee span {
+    font-size: 250rem;
+  }
+}
+
+.top-feature__marquee__inner {
+  animation-name: marquee-right;
+}
+
 /*!
  top > top-voice
 ------------------------------

@@ -1,7 +1,212 @@
 @use "../../global" as g;
 @use "../../mixin/mixin" as m;
+@use "../../component/marquee" as c; // marqueeのkeyframesを使用可能にする
 
 /*!
  top > top-feature
 ------------------------------
  */
+.top-feature {
+  background-color: var(--color-bg-secondary);
+  position: relative;
+}
+
+.top-feature__inner {
+  padding: 80rem 30rem;
+  position: relative;
+
+  @include g.mq() {
+    padding: 160rem 90rem 255rem;
+  }
+
+  // 上下の装飾画像
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    @include m.background-img;
+    position: absolute;
+    aspect-ratio: 1/1;
+  }
+
+  // 上の装飾画像 SPでは非表示
+  &::before {
+    background-image: url(../img/top/top-feature-decoration-right.svg);
+    width: 60rem;
+    top: 15rem;
+    right: 15rem;
+
+    @include g.mq() {
+      width: 120rem;
+      top: 240rem;
+      right: 90rem;
+    }
+  }
+
+  // 下の装飾画像
+  &::after {
+    background-image: url(../img/top/top-feature-decoration-left.svg);
+    width: 45rem;
+    bottom: 15rem;
+    left: 15rem;
+
+    @include g.mq() {
+      width: 90rem;
+      bottom: 150rem;
+      left: 90rem;
+    }
+  }
+}
+
+.top-feature__title--en {
+  display: inline-block;
+
+  // 上の装飾線
+  &::before {
+    width: 180rem;
+    top: 8rem;
+    left: -15rem;
+
+    @include g.mq() {
+      width: 330rem;
+      left: -30rem;
+      top: 18rem;
+    }
+  }
+
+  // 下の装飾線
+  &::after {
+    width: 187rem;
+    bottom: 6rem;
+    right: -12rem;
+
+    @include g.mq() {
+      width: 380rem;
+      bottom: 12rem;
+      right: -45rem;
+    }
+  }
+}
+
+.top-feature__body {
+  @include g.mq() {
+    display: grid;
+    grid-template-columns: 360rem 1fr;
+    gap: 120rem;
+    margin-top: 120rem;
+  }
+}
+
+.top-feature__img-wrap {
+  position: relative;
+  width: 250rem;
+  height: 335rem;
+  margin: 54rem auto 0;
+
+  @include g.mq() {
+    margin-top: 0;
+    width: 100%;
+    height: 483rem;
+  }
+}
+
+.top-feature__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10rem;
+  width: 100%;
+  height: 100%;
+
+  // 1枚目の画像
+  &:nth-of-type(1) {
+    transform: rotate(-6deg);
+    z-index: 2;
+  }
+
+  // 2枚目の画像
+  &:nth-of-type(2) {
+    z-index: var(--z-index-default);
+
+    // 半透明の黒フィルターを配置
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-bg-primary);
+      opacity: 0.4;
+    }
+  }
+}
+
+.top-feature__content {
+  margin-top: 45rem;
+
+  @include g.mq() {
+    margin-top: 0;
+  }
+}
+
+.top-feature__lead {
+  @include m.font-family-base($weight: "Medium");
+  @include m.font-size($font-size: 26, $line-height: 42);
+
+  @include g.mq() {
+    @include m.font-size($font-size: 40, $line-height: 48);
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.top-feature__text {
+  margin-top: 18rem;
+  @include m.font-size($font-size: 16, $line-height: 32);
+
+  @include g.mq() {
+    margin-top: 265rem;
+  }
+
+  span {
+    display: block;
+    @include m.letter-spacing(10);
+  }
+}
+
+.top-feature__btn {
+  margin-top: 40rem;
+
+  @include g.mq() {
+    margin-top: 38rem;
+  }
+}
+
+// 左向きにtextを流す
+.top-feature__marquee {
+  color: var(--color-white);
+  margin-top: 52rem;
+  overflow: visible;
+  position: absolute;
+  top: 320rem;
+  z-index: 0;
+
+  @include g.mq() {
+    margin-top: 180rem;
+    top: 370rem;
+  }
+
+  span {
+    font-size: 132rem;
+
+    @include g.mq() {
+      font-size: 250rem;
+    }
+  }
+}
+
+.top-feature__marquee__inner {
+  animation-name: marquee-right;
+}
