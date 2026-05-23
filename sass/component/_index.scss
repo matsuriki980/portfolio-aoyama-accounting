@@ -2,7 +2,7 @@
 @use "./btn-arrow";
 @use "./title";
 @use "./logo";
-@use "./marquee";
+@forward "./marquee";
 @use "./news-item";
 @use "./voice-item";
 @use "./contact-label";
