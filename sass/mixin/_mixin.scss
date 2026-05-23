@@ -49,7 +49,7 @@ $font-weight: (
 // image-base
 // ==================================================================
 $size: (cover, contain);
-$position: (center, top, bottom, left, right);
+$position: (center, top, bottom, left, right,initial);
 $repeat: (no-repeat, repeat, repeat-x, repeat-y);
 
 @mixin image-base(

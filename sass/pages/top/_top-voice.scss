@@ -8,6 +8,23 @@
 .top-voice {
   background-color: var(--color-bg-primary);
   color: var(--color-white);
+
+  // step状の装飾画像をセクション上部に配置
+  @include g.mq() {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 960rem;
+      height: 60rem;
+      top: -60rem;
+      left: 0;
+      @include m.background-img($size: cover ,$position: initial);
+      background-image: url(../img/top/top-voice-step.svg);
+    }
+  }
 }
 
 .top-voice__inner {

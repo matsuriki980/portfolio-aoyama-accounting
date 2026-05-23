@@ -188,18 +188,20 @@
 .top-feature__marquee {
   color: var(--color-white);
   margin-top: 52rem;
-  overflow: visible;
   position: absolute;
-  top: 320rem;
+  top: 290rem;
   z-index: 0;
+  height: 125rem;
 
   @include g.mq() {
     margin-top: 180rem;
-    top: 370rem;
+    top: 320rem;
+    height: 225rem;
   }
 
   span {
     font-size: 132rem;
+    line-height: 1;
 
     @include g.mq() {
       font-size: 250rem;
