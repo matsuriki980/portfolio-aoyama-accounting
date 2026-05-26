@@ -5,3 +5,256 @@
  service
 ------------------------------
  */
+// 背景画像を設定
+.service-fv__inner {
+  background-image: url(../service/img/service-kv-sp.jpg);
+
+  @include g.mq() {
+    background-image: url(../service/img/service-kv.jpg);
+  }
+}
+
+.service {
+}
+
+.service__inner {
+  padding-block: 60rem;
+
+  @include g.mq() {
+    padding-block: 120rem;
+  }
+}
+
+.service__list {
+}
+
+.service__item {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include g.mq() {
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid
+      color-mix(in srgb, var(--color-bg-primary) 25%, transparent);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--color-bg-primary) 25%, transparent);
+
+    // 2つ目のitemを左右反転させる
+    &:nth-of-type(2) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.service__body {
+  padding: 40rem 30rem 60rem;
+
+  @include g.mq() {
+    height: 100%;
+    padding-inline: 120rem;
+    width: 780rem;
+  }
+}
+
+// sp版 最後のitemのpadding-bottomを解除
+.service__item {
+  &:nth-of-type(3) {
+    .service__body {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.service__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16rem;
+
+  @include g.mq() {
+    gap: 0 24rem;
+  }
+}
+
+.service__number {
+  @include m.font-size($font-size: 64, $line-height: 64);
+  @include m.font-family-en($weight: "ExtraLight");
+  @include m.letter-spacing(8);
+  color: var(--color-accent-tertiary);
+
+  @include g.mq() {
+    font-size: 80rem;
+  }
+}
+
+.service__title-wrap {
+}
+
+.service__title--ja {
+  @include m.font-size($font-size: 26, $line-height: 36);
+  @include m.font-family-base($weight: "Medium");
+
+  @include g.mq() {
+    font-size: 32rem;
+  }
+}
+
+.service__title--en {
+  @include m.font-size($font-size: 14, $line-height: 28);
+  @include m.font-family-en($weight: "ExtraLight");
+}
+
+.service__body-list {
+  margin-top: 24rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+
+  @include g.mq() {
+    margin-top: 40rem;
+    gap: 14rem;
+  }
+}
+
+.service__body-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12rem;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-bg-primary) 20%, transparent);
+  gap: 8rem;
+
+  @include g.mq() {
+    padding-bottom: 14rem;
+  }
+}
+
+.service__body-item-title {
+  color: var(--color-accent-primary);
+  @include m.font-family-base($weight: "Medium");
+  @include m.font-size($font-size: 16, $line-height: 28);
+  @include m.letter-spacing(10);
+
+  @include g.mq() {
+    font-size: 18rem;
+  }
+}
+
+// 装飾の□の設定
+.service__decoration-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.service__decoration {
+  display: block;
+  width: 10rem;
+  aspect-ratio: 1/1;
+
+  // 1つ目
+  &:nth-of-type(1) {
+    background-color: var(--color-accent-primary);
+  }
+
+  // 2つ目
+  &:nth-of-type(2) {
+    background-color: var(--color-accent-secondary);
+  }
+
+  // 3つ目
+  &:nth-of-type(3) {
+    background-color: var(--color-accent-tertiary);
+  }
+}
+
+.service__text {
+  margin-top: 24rem;
+
+  @include g.mq() {
+    margin-top: 30rem;
+  }
+}
+
+.service__img {
+  @include g.mq() {
+    width: 660rem;
+    border-left: 1px solid
+      color-mix(in srgb, var(--color-bg-primary) 20%, transparent);
+  }
+}
+
+// 2つ目のitemの画像線は右側に設定する
+.service__item {
+  @include g.mq() {
+    // 2つ目のitemを左右反転させる
+    &:nth-of-type(2) {
+      .service__img {
+        border-left: 0;
+        border-right: 1px solid
+          color-mix(in srgb, var(--color-bg-primary) 20%, transparent);
+      }
+    }
+  }
+}
+
+// 1つ目と2つ目のitemの装飾画像設定 (PCのみ)
+.service__item {
+  @include g.mq() {
+    &:not(:nth-of-type(2)) {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 45rem;
+        aspect-ratio: 1/1;
+        position: absolute;
+        @include m.background-img;
+      }
+    }
+
+    // 1つ目のitem
+    &:nth-of-type(1) {
+      &::before,
+      &::after {
+        width: 90rem;
+        aspect-ratio: 1/1;
+      }
+
+      &::before {
+        background-image: url(../service/img/service-item01-decoration-top.svg);
+        top: -30rem;
+      }
+
+      &::after {
+        background-image: url(../service/img/service-item01-decoration-bottom.svg);
+        right: 0;
+        bottom: -60rem;
+      }
+    }
+
+    // 3つ目のitem
+    &:nth-of-type(3) {
+      &::before,
+      &::after {
+        width: 120rem;
+        aspect-ratio: 4/3;
+      }
+
+      &::before {
+        background-image: url(../service/img/service-item03-decoration-top.svg);
+        top: 0;
+        left: -30rem;
+      }
+
+      &::after {
+        background-image: url(../service/img/service-item03-decoration-bottom.svg);
+        right: 0;
+        bottom: -30rem;
+      }
+    }
+  }
+}
