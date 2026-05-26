@@ -803,18 +803,6 @@ utility
  layout > header
 ------------------------------
  */
-.content1 {
-  width: 100%;
-  height: 100vh;
-  background-color: aquamarine;
-}
-
-.content2 {
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-}
-
 .l-header {
   position: fixed;
   inset: 0;
@@ -833,6 +821,7 @@ utility
 }
 .l-header.is-active {
   background-color: var(--color-white);
+  box-shadow: 0 7rem 30rem 0 rgba(48, 48, 48, 0.15);
 }
 
 .l-header__inner {
