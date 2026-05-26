@@ -5,3 +5,75 @@
  about > about-values
 ------------------------------
  */
+
+.about-values__bg {
+  @include m.background-img(cover);
+  background-image: url(../about/img/about-values-sp.jpg);
+
+  @include g.mq() {
+    background-image: url(../about/img/about-values.jpg);
+    overflow: hidden;
+  }
+}
+
+.about-values__inner {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding-bottom: 7rem;
+
+  @include g.mq() {
+    padding: 0 120rem 90rem 0;
+  }
+}
+
+.about-values__content {
+  align-self: flex-end;
+}
+
+.about-values__lead {
+  text-align: right;
+
+  @include g.mq() {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  span {
+    @include m.font-size($font-size: 18, $line-height: 55);
+    @include m.font-family-base($weight: "Medium");
+    @include m.letter-spacing(0);
+    display: inline-block;
+    color: var(--color-white);
+    background-color: var(--color-accent-primary);
+    padding-left: 15rem;
+    margin-bottom: 12rem;
+
+    @include g.mq() {
+      @include m.font-size($font-size: 26, $line-height: 55);
+      margin-bottom: 0;
+      padding-left: 20rem;
+    }
+  }
+}
+
+.about-values__title--ja {
+  margin-left: 15rem;
+
+  @include g.mq() {
+    margin-left: 0;
+  }
+}
+
+.about-values__title--en {
+  writing-mode: vertical-rl;
+  color: var(--color-white);
+  font-size: 135rem;
+  line-height: 0.5;
+
+  @include g.mq() {
+    font-size: 220rem;
+    transform: translateY(-12rem);
+  }
+}

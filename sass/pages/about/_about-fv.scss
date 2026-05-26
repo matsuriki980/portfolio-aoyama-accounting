@@ -1,0 +1,16 @@
+@use "../../global" as g;
+@use "../../mixin/mixin" as m;
+
+/*!
+ about > about-fv
+------------------------------
+ */
+
+// 背景画像を設定
+.about-fv__inner {
+  background-image: url(../about/img/about-kv-sp.jpg);
+
+  @include g.mq() {
+    background-image: url(../about/img/about-kv.jpg);
+  }
+}

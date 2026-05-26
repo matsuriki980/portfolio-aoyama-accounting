@@ -5,3 +5,69 @@
  about > about-access
 ------------------------------
  */
+.about-access {
+}
+
+.about-access__inner {
+  @include g.mq() {
+    display: grid;
+    grid-template-columns: 1fr 870rem;
+  }
+}
+
+.about-access__content {
+  padding: 60rem 30rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+
+  @include g.mq() {
+    padding: 0 0 0 114rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.about-access__title--en {
+  // 上の装飾線
+  &::before {
+    width: 96rem;
+    top: 8rem;
+    left: -15rem;
+
+    @include g.mq() {
+      width: 189rem;
+      top: 18rem;
+    }
+  }
+
+  // 下の装飾線
+  &::after {
+    width: 104rem;
+    left: 86rem;
+    bottom: 6rem;
+
+    @include g.mq() {
+      width: 210rem;
+      bottom: 12rem;
+      left: 108rem;
+    }
+  }
+}
+
+.about-access__address {
+  margin-top: 24rem;
+
+  span {
+    display: block;
+    line-height: 1.7;
+  }
+}
+
+.about-access__map {
+  height: 510rem;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

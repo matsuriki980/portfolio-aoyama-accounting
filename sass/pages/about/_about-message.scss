@@ -5,3 +5,148 @@
  about > about-message
 ------------------------------
  */
+
+.about-message__inner {
+  padding-top: 60rem;
+
+  @include g.mq() {
+    padding-top: 104rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-message__title-wrap {
+  padding-left: 30rem;
+  position: relative;
+  z-index: var(--z-index-default);
+
+  @include g.mq() {
+    padding-left: 115rem;
+    margin-bottom: -12rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
+
+.about-message__img {
+  @include g.mq() {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    position: relative;
+    border-right: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+
+    // 上の線
+    &::before {
+      content: "";
+      display: block;
+      width: calc(100% - 30rem);
+      height: 0.8rem;
+      background-color: currentColor;
+      opacity: 0.25;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.about-message__content {
+  padding: 32rem 30rem 60rem;
+  position: relative;
+  background-color: var(--color-white);
+
+  @include g.mq() {
+    padding: 0 90rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+    transform: translateY(30rem);
+  }
+
+  // 装飾画像の設定
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    @include m.background-img;
+    position: absolute;
+    aspect-ratio: 1/1;
+  }
+
+  // 右上の装飾
+  &::before {
+    background-image: url(../about/img/about-message-decoration-top.svg);
+    width: 90rem;
+    top: -45rem;
+    right: 0;
+
+    @include g.mq() {
+      width: 120rem;
+      right: 0;
+      top: -30rem;
+    }
+  }
+
+  // 左下の装飾
+  &::after {
+    background-image: url(../about/img/about-message-decoration-bottom.svg);
+    width: 60rem;
+    left: 0;
+    bottom: -20rem;
+
+    @include g.mq() {
+      width: 90rem;
+      left: -30rem;
+      bottom: -30rem;
+    }
+  }
+}
+
+.about-message__lead {
+  span {
+    @include m.font-size($font-size: 26, $line-height: 42);
+    @include m.font-family-base($weight: "Medium");
+    color: var(--color-accent-primary);
+
+    @include g.mq() {
+      display: block;
+      font-size: 32rem;
+    }
+  }
+}
+
+.about-message__text {
+  margin-top: 20rem;
+
+  @include g.mq() {
+    margin-top: 34rem;
+  }
+}
+
+.about-message__name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20rem;
+  margin-top: 20rem;
+
+  @include g.mq() {
+    margin-top: 34rem;
+  }
+}
+
+.about-message__position {
+  @include m.font-size($font-size: 14, $line-height: 32);
+  @include m.letter-spacing(10);
+}
+
+.about-message__name-img {
+  @include g.mq() {
+    width: 120rem;
+  }
+}
