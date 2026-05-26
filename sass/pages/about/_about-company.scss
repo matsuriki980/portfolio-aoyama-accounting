@@ -5,3 +5,89 @@
  about > about-company
 ------------------------------
  */
+.about-company {
+}
+
+.about-company__inner {
+  padding: 60rem 30rem;
+
+  @include g.mq() {
+    display: grid;
+    grid-template-columns: 1fr 630rem;
+    padding: 106rem 120rem 120rem;
+  }
+}
+
+.about-company__title-wrap {
+}
+
+.about-company__title {
+}
+
+.about-company__title--en {
+  // 上の装飾線
+  &::before {
+    width: 160rem;
+    top: 8rem;
+    left: -15rem;
+
+    @include g.mq() {
+      top: 16rem;
+    }
+  }
+
+  // 下の装飾線
+  &::after {
+    width: 148rem;
+    right: 56rem;
+    bottom: 6rem;
+
+    @include g.mq() {
+      right: 120rem;
+      bottom: 12rem;
+    }
+  }
+}
+
+.about-company__list {
+  margin-top: 42rem;
+}
+
+.about-company__item {
+  padding-block: 16rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include g.mq() {
+    padding-block: 29rem;
+    grid-template-columns: 75rem 1fr;
+    gap: 0 45rem;
+  }
+
+  dt {
+    @include m.font-family-base($weight: "Medium");
+    @include m.letter-spacing(10);
+
+    @include g.mq() {
+      grid-column: 1 / 2;
+    }
+  }
+
+  dd {
+    font-size: 14rem;
+
+    @include g.mq() {
+      grid-column: 2 / 3;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  // 最後のitemのみborder-bottomを設定
+  &:last-of-type {
+    border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  }
+}
