@@ -28,7 +28,7 @@
 }
 
 .c-voice__number {
-  color: var(--color-white);
+  color: currentColor;
   @include m.font-family-en($weight: "Light");
   @include m.font-size($font-size: 14, $line-height: 10);
   @include m.letter-spacing($letter-spacing: 2);
