@@ -1,0 +1,40 @@
+@use "../global" as g;
+@use "../mixin/mixin" as m;
+
+/*!
+ component > pagination
+------------------------------
+*/
+.c-pagination__btn-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.c-pagination__btn {
+  display: grid;
+  place-items: center;
+  width: 50rem;
+  aspect-ratio: 1/1;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: opacity var(--duration-base);
+  @include m.font-size($font-size: 18, $line-height: 18);
+  @include m.letter-spacing(-5);
+  @include m.font-family-en($weight: "ExtraLight");
+
+  // hover時透過解除
+  &:hover {
+    opacity: 1;
+  }
+
+  // 選択中
+  &.active {
+    opacity: 1;
+
+    // カーソルとイベントを停止する
+    pointer-events: none;
+    cursor: default;
+  }
+}
