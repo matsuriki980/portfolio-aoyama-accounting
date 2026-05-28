@@ -1,0 +1,49 @@
+@use "../global" as g;
+@use "../mixin/mixin" as m;
+
+/*!
+ layout > side-var
+------------------------------
+ */
+.l-sidebar {
+  // コンテンツ上部からfooterまでを追従
+  @include g.mq() {
+    position: sticky;
+    top: 182rem;
+  }
+}
+
+.l-sidebar__section {
+  // 2つ目のside-varにmargin-topを指定
+  &:nth-of-type(2) {
+    margin-top: 50rem;
+  }
+}
+
+.l-sidebar__title {
+  @include m.font-size($font-size: 16, $line-height: 0);
+  @include m.letter-spacing(4);
+  @include m.font-family-en($weight: "Light");
+  padding-bottom: 24rem;
+  border-bottom: 1px solid var(--color-text-primary);
+}
+
+.l-sidebar__list {
+  margin-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+}
+
+.l-sidebar__item {
+  @include m.font-size($font-size: 14, $line-height: 20);
+}
+
+.l-sidebar__link {
+  @include m.letter-spacing(10);
+  @include m.font-family-base($weight: "Medium");
+}
+
+.l-sidebar__count {
+  color: #b1b1b1;
+}
