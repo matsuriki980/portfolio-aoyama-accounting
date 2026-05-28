@@ -6,6 +6,10 @@
 ------------------------------
 */
 
+.c-news__list {
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+}
+
 .c-news__item {
   border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
 }
