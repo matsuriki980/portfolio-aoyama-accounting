@@ -5,3 +5,56 @@
   voice > detail > voice-detail-other
 ------------------------------
  */
+.voice-other {
+  background-color: var(--color-bg-secondary);
+}
+
+.voice-other__inner {
+  padding: 60rem 30rem;
+
+  @include g.mq() {
+    padding: 100rem 120rem;
+  }
+}
+
+.voice-other__title--en {
+  font-size: 64rem;
+
+  @include g.mq() {
+    font-size: 76rem;
+  }
+}
+
+.voice-other__list {
+  margin-top: 60rem;
+
+  @include g.mq() {
+    margin-top: 80rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.voice-other__item {
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-left: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+
+  @include g.mq() {
+    // pc版ではborder-top,border-leftを消す
+    border-top: 0;
+    border-right: 0;
+
+    // 最後のitemのみborder-rightを追加
+    &:last-of-type:nth-of-type(1),
+    &:last-of-type:nth-of-type(2),
+    &:last-of-type:nth-of-type(3) {
+      border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    }
+  }
+}
+
+.voice-other__link {
+  @include g.mq() {
+    padding-block: 0;
+  }
+}
