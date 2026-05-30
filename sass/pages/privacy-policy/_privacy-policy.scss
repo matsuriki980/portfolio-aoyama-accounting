@@ -5,3 +5,118 @@
  privacy-policy
 ------------------------------
  */
+// 背景画像を設定
+.privacy-policy-fv__inner {
+  background-color: var(--color-bg-primary);
+
+  // 黒フィルターを非表示
+  &::before {
+    display: none;
+  }
+}
+
+.privacy-policy {
+}
+
+.privacy-policy__inner {
+  padding: 60rem 30rem;
+
+  @include g.mq() {
+    padding: 114rem 315rem;
+  }
+}
+
+.privacy-policy__lead {
+}
+
+.privacy-policy__section-wrap {
+  margin-top: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40rem;
+
+  @include g.mq() {
+    margin-top: 60rem;
+  }
+}
+
+.privacy-policy__section {
+}
+
+.privacy-policy__title {
+  @include m.font-family-base($weight: "Medium");
+  @include m.font-size($font-size: 20, $line-height: 36);
+  @include m.letter-spacing(5);
+  padding-bottom: 15rem;
+  border-bottom: 1px solid var(--color-text-primary);
+
+  @include g.mq() {
+    font-size: 22rem;
+  }
+}
+
+// 全階層のlistを縦並びにする
+.privacy-policy__list,
+.privacy-policy__secondary-list,
+.privacy-policy__tertiary-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy-policy__list {
+  gap: 20rem;
+  margin-top: 20rem;
+
+  & > .privacy-policy__item {
+
+    // 1つ目のitem以外にmargin-topを指定
+    &:not(:nth-of-type(1)) {
+     margin-top: 4rem;
+
+     @include g.mq() {
+      margin-top: 12rem;
+     }
+    }
+  }
+}
+
+// 2階層目の設定
+.privacy-policy__secondary-list {
+  gap: 12rem;
+  margin-top: 16rem;
+  font-size: 15rem;
+}
+
+// 3階層目の設定
+.privacy-policy__tertiary-list {
+  gap: 4rem;
+  margin-top: 4rem;
+  font-size: 14rem;
+}
+
+.privacy-policy__content {
+  margin-top: 20rem;
+}
+
+.privacy-policy__address {
+}
+
+.privacy-policy__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+  margin-top: 20rem;
+}
+
+.privacy-policy__contact-item {
+  display: flex;
+  flex-direction: column;
+
+  @include g.mq() {
+    flex-direction: row;
+  }
+
+  * {
+    line-height: 1.4;
+  }
+}
