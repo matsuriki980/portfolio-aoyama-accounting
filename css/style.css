@@ -4088,4 +4088,102 @@ body.is-drawer-open {
 /*!
  privacy-policy
 ------------------------------
- *//*# sourceMappingURL=style.css.map */
+ */
+.privacy-policy-fv__inner {
+  background-color: var(--color-bg-primary);
+}
+.privacy-policy-fv__inner::before {
+  display: none;
+}
+
+.privacy-policy__inner {
+  padding: 60rem 30rem;
+}
+@media screen and (min-width: 900px) {
+  .privacy-policy__inner {
+    padding: 114rem 315rem;
+  }
+}
+
+.privacy-policy__section-wrap {
+  margin-top: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40rem;
+}
+@media screen and (min-width: 900px) {
+  .privacy-policy__section-wrap {
+    margin-top: 60rem;
+  }
+}
+
+.privacy-policy__title {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 20rem;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  padding-bottom: 15rem;
+  border-bottom: 1px solid var(--color-text-primary);
+}
+@media screen and (min-width: 900px) {
+  .privacy-policy__title {
+    font-size: 22rem;
+  }
+}
+
+.privacy-policy__list,
+.privacy-policy__secondary-list,
+.privacy-policy__tertiary-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy-policy__list {
+  gap: 20rem;
+  margin-top: 20rem;
+}
+.privacy-policy__list > .privacy-policy__item:not(:nth-of-type(1)) {
+  margin-top: 4rem;
+}
+@media screen and (min-width: 900px) {
+  .privacy-policy__list > .privacy-policy__item:not(:nth-of-type(1)) {
+    margin-top: 12rem;
+  }
+}
+
+.privacy-policy__secondary-list {
+  gap: 12rem;
+  margin-top: 16rem;
+  font-size: 15rem;
+}
+
+.privacy-policy__tertiary-list {
+  gap: 4rem;
+  margin-top: 4rem;
+  font-size: 14rem;
+}
+
+.privacy-policy__content {
+  margin-top: 20rem;
+}
+
+.privacy-policy__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+  margin-top: 20rem;
+}
+
+.privacy-policy__contact-item {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 900px) {
+  .privacy-policy__contact-item {
+    flex-direction: row;
+  }
+}
+.privacy-policy__contact-item * {
+  line-height: 1.4;
+}/*# sourceMappingURL=style.css.map */
