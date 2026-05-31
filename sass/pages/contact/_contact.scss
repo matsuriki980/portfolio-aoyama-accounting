@@ -5,12 +5,153 @@
  contact
 ------------------------------
  */
- // 背景画像を設定
+// 背景画像を設定
 .contact-fv__inner {
   background-color: var(--color-bg-primary);
 
   // 黒フィルターを非表示
   &::before {
     display: none;
+  }
+}
+
+.contact {
+}
+
+.contact__inner {
+  padding: 60rem 30rem;
+
+  @include g.mq() {
+    padding: 90rem 320rem 120rem;
+  }
+}
+
+.contact__form {
+  margin-top: 32rem;
+
+  @include g.mq() {
+    margin-top: 46rem;
+  }
+}
+
+.contact__form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22rem;
+}
+
+.contact__form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.contact__form-label {
+}
+
+.contact__form-text,
+.contact__form-textarea {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid color-mix(in srgb, var(--color-bg-primary) 10%, transparent);
+  padding: 7rem 17rem;
+}
+
+// 郵便番号入力エリアの設定
+.contact__postal {
+  input {
+    width: 66rem;
+  }
+
+  // 文字数が多いため2つ目の入力エリアの幅を広く設定
+  input:nth-of-type(2) {
+    width: 76rem;
+  }
+}
+
+// プライバシーポリシー チェック
+.privacy-consent {
+  @include m.font-family-base($weight: "Medium");
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: flex-start;
+  gap: 13rem;
+  justify-content: center;
+  margin-top: 12rem;
+
+  @include g.mq() {
+    align-items: center;
+  }
+
+  a {
+    color: var(--color-accent-primary);
+    border-bottom: 1px solid currentColor;
+    display: inline-block;
+    line-height: 1.2;
+  }
+}
+
+.privacy-consent__checkbox {
+  border-radius: 3rem;
+  border: 1px solid color-mix(in srgb, var(--color-bg-primary) 30%, transparent);
+  display: block;
+  width: 18rem;
+  aspect-ratio: 1/1;
+  margin-top: 10rem;
+  position: relative;
+
+  @include g.mq() {
+    margin-top: 0;
+    cursor: pointer;
+  }
+
+  // チェックアイコン
+  &::before {
+    content: "";
+    display: block;
+    @include m.mask-img(cover);
+    mask-image: url(/contact/img/checkbox-icon.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15.5rem;
+    height: 10.5rem;
+    background-color: var(--color-white);
+  }
+
+  // チェック時、背景を青にする
+  &:checked {
+    background-color: var(--color-accent-primary);
+  }
+}
+
+.privacy-consent__label {
+  @include g.mq() {
+    cursor: pointer;
+  }
+}
+
+.contact__form-btn {
+  margin-top: 30rem;
+  color: var(--color-white);
+  background-color: var(--color-accent-primary);
+  width: 100%;
+  height: 60rem;
+  @include m.font-family-base($weight: "Medium");
+  letter-spacing: 0.08em;
+  font-size: 18rem;
+  margin: 18rem auto 0;
+
+  @include g.mq() {
+    width: 300rem;
+    font-size: 20rem;
+    transition: background-color var(--duration-base);
+
+    // hover時、背景色を濃くする
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #26346a;
+      }
+    }
   }
 }
