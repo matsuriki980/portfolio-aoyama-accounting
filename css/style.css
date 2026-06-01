@@ -4475,4 +4475,75 @@ body.is-drawer-open {
 }
 .privacy-policy__contact-item * {
   line-height: 1.4;
+}
+
+/*!
+ page-404
+------------------------------
+ */
+.page-404__inner {
+  padding: 136rem 30rem;
+  text-align: center;
+}
+@media screen and (min-width: 900px) {
+  .page-404__inner {
+    padding: 182rem 320rem 120rem;
+  }
+}
+
+.page-404__title {
+  font-family: var(--font-family-en);
+  font-weight: 300;
+  font-size: 48rem;
+  line-height: 1.5;
+  letter-spacing: -0.05em;
+}
+@media screen and (min-width: 900px) {
+  .page-404__title {
+    font-size: 72rem;
+  }
+}
+
+.page-404__lead {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  line-height: 2.5;
+  letter-spacing: 0.08em;
+  margin-top: 22rem;
+}
+@media screen and (min-width: 900px) {
+  .page-404__lead {
+    margin-top: 36rem;
+  }
+  .page-404__lead span {
+    display: block;
+  }
+}
+
+.page-404__btn {
+  margin-top: 32rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  background-color: var(--color-accent-primary);
+  width: 100%;
+  height: 60rem;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-size: 18rem;
+  transition: background-color var(--duration-base);
+}
+@media screen and (min-width: 900px) {
+  .page-404__btn {
+    width: 300rem;
+    font-size: 20rem;
+    margin: 56rem auto 0;
+  }
+}
+@media screen and (min-width: 900px) and (any-hover: hover) {
+  .page-404__btn:hover {
+    background-color: #26346a;
+  }
 }/*# sourceMappingURL=style.css.map */
