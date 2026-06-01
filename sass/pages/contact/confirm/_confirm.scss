@@ -5,3 +5,30 @@
  contact > confirm
 ------------------------------
  */
+
+.confirm__list {
+  display: flex;
+  flex-direction: column;
+  gap: 22rem;
+  margin-top: 32rem;
+
+  @include g.mq() {
+    gap: 40rem;
+    margin-top: 46rem;
+  }
+}
+
+.confirm__item {
+  padding-bottom: 12rem;
+  border-bottom: 1px solid rgba($color: #1f1f1f, $alpha: 0.25);
+}
+
+.confirm__btn-wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 32rem;
+
+    @include g.mq() {
+        margin-top: 56rem;
+    }
+}
