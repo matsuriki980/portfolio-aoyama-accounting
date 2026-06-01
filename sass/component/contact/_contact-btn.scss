@@ -1,0 +1,49 @@
+@use "../../global" as g;
+@use "../../mixin/mixin" as m;
+
+/*!
+ component > contact > contact-btn
+ ------------------------------
+*/
+.c-contact__btn {
+  margin-top: 30rem;
+  color: var(--color-white);
+  background-color: var(--color-accent-primary);
+  width: 100%;
+  height: 60rem;
+  @include m.font-family-base($weight: "Medium");
+  letter-spacing: 0.08em;
+  font-size: 18rem;
+  margin: 18rem auto 0;
+
+  @include g.mq() {
+    width: 300rem;
+    font-size: 20rem;
+    transition: color var(--duration-base), background-color var(--duration-base);
+
+    // hover時、背景色を濃くする
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #26346a;
+      }
+    }
+  }
+
+  // 戻るボタン
+  &--prev {
+    color: var(--color-text-primary);
+    border: 1px solid currentColor;
+    background-color: transparent;
+
+    @include g.mq() {
+
+      // hover時、背景色を濃くする
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: var(--color-text-primary);
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+}

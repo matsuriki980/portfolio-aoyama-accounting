@@ -1,0 +1,14 @@
+@use "../../global" as g;
+@use "../../mixin/mixin" as m;
+
+/*!
+ component > contact > contact-inner
+ ------------------------------
+*/
+.c-contact__inner {
+  padding: 60rem 30rem;
+
+  @include g.mq() {
+    padding: 90rem 320rem 120rem;
+  }
+}
