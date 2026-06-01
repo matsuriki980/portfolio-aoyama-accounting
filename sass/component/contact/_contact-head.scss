@@ -22,7 +22,10 @@
   margin-top: 24rem;
 
   span {
-    display: block;
     letter-spacing: 0.02em;
+
+    @include g.mq() {
+      display: block;
+    }
   }
 }

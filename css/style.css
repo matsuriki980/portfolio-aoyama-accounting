@@ -829,8 +829,12 @@ body {
   margin-top: 24rem;
 }
 .c-contact__lead span {
-  display: block;
   letter-spacing: 0.02em;
+}
+@media screen and (min-width: 900px) {
+  .c-contact__lead span {
+    display: block;
+  }
 }
 
 /*!
